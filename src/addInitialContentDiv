@@ -1,0 +1,45 @@
+import teaStallImage from "../images/tea-stall-image.jpg";
+
+const addInitialContentDiv = () => {
+  let bodyNode = document.getElementsByTagName("body");
+
+  let wrapperNode = document.createElement("div");
+  wrapperNode.classList.add("wrapper");
+
+  let titleHeader = document.createElement("h1");
+  titleHeader.classList.add("title");
+  titleHeader.textContent = "TRUSTY TEAPOT";
+  wrapperNode.appendChild(titleHeader);
+
+  let teaStallImageNode = document.createElement("img");
+  teaStallImageNode.classList.add("title-image");
+  teaStallImageNode.src = teaStallImage;
+  wrapperNode.append(teaStallImageNode);
+
+  let tabMenuNode = document.createElement("div");
+  tabMenuNode.classList.add("tab-menu");
+
+  let homeMenuNode = document.createElement("div");
+  homeMenuNode.classList.add("tab-menu-item");
+  homeMenuNode.textContent = "HOME";
+  tabMenuNode.appendChild(homeMenuNode);
+
+  let dishesMenuNode = document.createElement("div");
+  dishesMenuNode.classList.add("tab-menu-item");
+  dishesMenuNode.textContent = "DISHES";
+  tabMenuNode.appendChild(dishesMenuNode);
+
+  let locationMenuNode = document.createElement("div");
+  locationMenuNode.classList.add("tab-menu-item");
+  locationMenuNode.textContent = "LOCATION";
+  tabMenuNode.appendChild(locationMenuNode);
+
+  wrapperNode.appendChild(tabMenuNode);
+
+  let contentNode = document.createElement("div");
+  contentNode.setAttribute("id", "content");
+  wrapperNode.appendChild(contentNode);
+  bodyNode[0].appendChild(wrapperNode);
+};
+
+export { addInitialContentDiv };
